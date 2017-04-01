@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>carolina valente pinto</title>
+	<meta charset="UTF-8" />
+
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen,projection"/>
+	<!-- link rel="stylesheet" href="style2.css" type="text/css" media="screen,projection"/-->
+
+
+
+	<script type="text/javascript">
+		function shuffle( o  ) {
+	        for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x );
+
+	        return o;
+	    }
+// overall
+	    var slideshow_speed = 2000;
+
+	    var lft_output;
+	    var lft_index = 0;
+		var lft_images = shuffle( [ "bestbook2left.jpg", "black2left.jpg", "nakedlunch4left.jpg", "screenshot2left.jpg", "simetria5left.jpg", "iamhereleft.jpg", "fword6left.jpg", "gun1left.jpg" ] );
+
+	    var rgt_output;
+	    var rgt_index = 0;
+		var rgt_images = shuffle( [ "bestbook2right.jpg", "black2right.jpg", "nakedlunch4right.jpg", "screenshot2right.jpg", "simetria5right.jpg", "iamhereright.jpg", "fword6right.jpg", "gun1right.jpg" ] );
+
+		// var pos = 0;
+
+		// function slideshow( ) {
+		//    image1.src=myimg[pos];
+		//    pos = (pos+1)%myimg.length;
+		// }
+
+
+		function loadImage( edge, interval ) {
+			cur_output = window[ edge + "_output" ];
+			cur_index = window[ edge + "_index" ];
+			cur_images = window[ edge + "_images" ];
+
+			cur_output.style.backgroundImage = "url(backgrounds/" + cur_images[ cur_index ] + ")";
+
+			cur_index++;
+			if ( cur_index >= cur_images.length ) cur_index = 0;
+
+			window[ edge + "_index" ] = cur_index;
+
+			setTimeout( function( ) {
+				console.log( "replace" )
+				loadImage( edge, slideshow_speed );
+			}, interval );
+		}
+
+		function initSlideShows( ) {
+			lft_output = document.getElementById( "bleed-left" );
+			rgt_output = document.getElementById( "bleed-right" );
+
+			loadImage( "lft", slideshow_speed / 2 );
+			loadImage( "rgt", slideshow_speed );
+		}
+
+		window.onload = initSlideShows;
+	</script>
+</head>
+
+<body>
+
+	<div id= "wrapper">
+		<div id="bleed-left"></div>
+		<div id="bleed-right"></div>
+
+		<div id="header">
+			<h1>carolina valente pinto</h1>
+		</div>
+		<div id="menu">
+			<a href="design.html">work</a>
+			<a href="about.html">about</a>
+			
+		</div>
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!---<div id="wrapper">
+	<div id="content">
+		<div id="right">
+			<h1>RIGHT</h1>
+			<ul>
+				<li>pizza</li>
+				<li>glitter dresses</li>
+				<li>walking barefoot</li>
+				<li>red wine</li>
+			</ul>
+		</div>
+		
+		<div id="left">
+			<h1>LEFT</h1>
+			<div id="my-image"></div>
+		</div>	
+	</div>
+</div>
+
+<!-- -->

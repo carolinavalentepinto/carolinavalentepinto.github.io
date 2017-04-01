@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html, body { height: 100% }
+body { overflow: hidden }
+
+a {
+    color: yellow;
+    font-family: "Courier New";
+    font-size: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+}
+
+#header {
+    position: fixed;
+    padding: 10px;
+    font-family: "Courier New";
+    font-size: 10px;
+    color: yellow;
+    text-decoration: none;
+    white-space: nowrap;
+
+}
+ 
+ #header:hover{
+    color:blue;
+ }
+ #menu {
+    position: relative;
+    padding: 5px;
+    text-align: right;
+    margin-top: 0px;
+    font-family: monospace;
+    font-size: 10px;
+    color: yellow;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#bleed-left, #bleed-right {
+    position: absolute; top: 0; 
+    width: 50%; height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#bleed-left { left: 0 }
+#bleed-right { right: 0 }
+
+
+/*#bleed-right {
+    float: left;
+    width: 50%;
+    overflow-y: hidden;
+    height: 100%;
+}
+#bleed-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    overflow-y: hidden;
+
+}*/
+
+#wrapper{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.myimg {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+

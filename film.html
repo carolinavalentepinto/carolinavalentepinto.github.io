@@ -1,0 +1,145 @@
+<html>
+
+<head>
+	<title>carolina valente pinto</title>
+	<meta charset="UTF-8" />
+
+	<!-- <link rel="stylesheet" href="style.css" type="text/css" media="screen,projection"/> -->
+	<!-- link rel="stylesheet" href="style2.css" type="text/css" media="screen,projection"/-->
+	<link rel="stylesheet" type="text/css" href="css.css">
+
+</head>
+
+<body>
+
+	<div id= "wrapper">
+
+		<div id="header">
+			<a href="index.html">carolina valente pinto</a>		
+		</div>
+
+	<div id="menu">
+			<a href="design.html"> graphic design</a>
+			<a href="film.html">film and photography</a>
+			<a href="about.html">about</a>
+		</div>
+
+		<div id="wrapperimg">
+			<img src="assets/yellowpics.jpg" class= "portfolio-item" id="yellow">
+			<img src="assets/vulcano.jpg" class="portfolio-item" id="vulcano">
+			<img src="assets/ladra.jpg" class="portfolio-item" id="ladra">
+
+			
+
+   			<video width="320" height="240" controls="controls" poster="" preload="true">
+     			<source src="assets/lessthanperfect1.mov" type="video/mp4"/>
+     
+   			</video>
+
+   		<video width="320" height="240" controls="controls" poster="" preload="true">
+     			<source src="assets/iamnotafeminist.mp4" type="video/mp4"/>
+     
+   			</video> 
+
+   		<video width="320" height="240" controls="controls" poster="" preload="true">
+     			<source src="assets/NSA1984.mp4" type="video/mp4"/>
+     
+   			</video>	
+		<video width="320" height="240" controls="controls" poster="" preload="true">
+     			<source src="assets/mewatchingviolenceDEF.mov" type="video/mp4"/>
+     
+   			</video>	
+		</div>
+	</div>
+
+<section class="detail" id="content-yellow">
+		<div class="close-button"></div>
+		<h1>One Colour Still Life</h1>
+		<p>Research with studio lighting, while creating still lives with my favourite colour.</p>
+		<img class="artwork" src="assets/yellowpics3.jpg"/>
+	</section>
+<section class="detail" id="content-vulcano">
+		<div class="close-button"></div>
+		<h1>Lanzarote</h1>
+		<p>Analogue photographs in the Vulcanos of Canary Island's Lanzarote. Praktica L2 with Pentax 50mm.</p>
+		<img class="artwork" src="assets/vulcano3.jpg"/>
+	</section>	
+<section class="detail" id="content-ladra">
+		<div class="close-button"></div>
+		<h1>Feira da Ladra</h1>
+		<p>Diary of a morning in the most famous flea market of Lisbon.</p>
+		<img class="artwork" src="assets/ladra3.jpg"/>
+	</section>		
+	
+
+	<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+
+$( function( ) {
+	// activate the close button
+	// $(".portfolio-item").mouseout(function(){
+	// 	// hide the section
+	// 	$('.detail').hide();
+	// 	console.log('close')
+	// });
+						
+
+		// get width of screen
+	var screenw, screenh;
+
+	function resizeScreen( ) {
+		screenw = $( window ).width();
+		screenh = $( window ).height();
+
+		console.log( screenw, screenh );
+	}
+
+	$( window ).resize( resizeScreen );
+	resizeScreen( );
+
+
+	function rolloverItem( event ) {
+
+		// use variables for readability
+		var item = $( this );
+		var item_id = item.attr('id');
+		var item_wdt = item.width( );
+
+		console.log( "rollover: " + item_id );
+
+		var content = $( "#content-" + item_id );
+		var content_wdt = content.width( );
+
+
+		var content_lft = item.position( ).left - ( content_wdt - item_wdt ) / 2;
+		if ( content_lft < 10 ) content_lft = 10;
+		else if ( content_lft + content_wdt > screenw - 10 )
+			content_lft = screenw - content_wdt - 10;
+
+
+		var content_top = event.pageY + 10;
+
+
+		content.css( { 'left': content_lft + 'px',
+					   'top': content_top + 'px' } )
+			   .show( );
+	}
+
+	function rolloutItem( ) {
+		// hide the section
+		$('.detail').hide();
+		console.log('close')
+	}
+
+	$(".portfolio-item").hover( rolloverItem, rolloutItem );
+} );
+</script>	
+
+</body>
+
+</html>
+</body>
+
+</html>
